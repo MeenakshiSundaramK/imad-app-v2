@@ -5,12 +5,70 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone = {
+    Title : 'Article One | By MSK',
+    Heading : 'Article One',
+    date : 'Feb 11, 2017',
+    content : `
+                <p>
+                    This is my first article.This is my first article.This is my first article.
+                    This is my first article.This is my first article.This is my first article.
+                </p>
+                <p>
+                    This is my first article.This is my first article.This is my first article.
+                    This is my first article.This is my first article.This is my first article.
+                </p>
+                <p>
+                    This is my first article.This is my first article.This is my first article.
+                    This is my first article.This is my first article.This is my first article.
+                </p>`
+
+};
+
+function createtemplate(data) {
+    Title = data.Title;
+    Heading = data.Heading;
+    date = data.date;
+    content = data.content;
+    
+    var htmltemplate = `
+    <html>
+        <title>
+            $(Heading)
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/ui/style.css" rel="stylesheet" />
+        
+        
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <div>
+                    $(Title)
+                </div>
+                <div>
+                    $(date)
+                </div>
+                <div>
+                    $(content)
+                </div>
+            </div>
+        </body>
+    </html>
+    `;
+    
+    return htmltemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createtemplate(articleone));
 });
 
 app.get('/article-two', function (req, res) {
