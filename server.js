@@ -34,7 +34,7 @@ function createtemplate(data) {
     var htmltemplate = `
     <html>
         <title>
-            $(Heading)
+            ${Heading}
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/ui/style.css" rel="stylesheet" />
@@ -46,13 +46,13 @@ function createtemplate(data) {
                     <a href="/">Home</a>
                 </div>
                 <div>
-                    $(Title)
+                    ${Title}
                 </div>
                 <div>
-                    $(date)
+                    ${date}
                 </div>
                 <div>
-                    $(content)
+                    ${content}
                 </div>
             </div>
         </body>
