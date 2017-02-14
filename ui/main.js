@@ -5,8 +5,7 @@ element.innerHTML='New Version';
 
 var img = document.getElementById('madi');
 var marginLeft = 0;
-function moveright()
-{
+function moveright() {
     marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + 'px';
 }
