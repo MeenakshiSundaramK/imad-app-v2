@@ -25,8 +25,7 @@ var articles = {
                     <p>
                         This is my second article.
                     </p>
-                `
-    
+                    `
     },
     'article-three' : {
         title : 'Article Three | By MSK',
