@@ -24,7 +24,8 @@ var articles = {
         content : `
                     <p>
                         This is my second article.
-                    </p>`
+                    </p>
+                `
     
     },
     'article-three' : {
@@ -35,7 +36,7 @@ var articles = {
                     <p>
                         This is my third article.
                     </p>`
-    
+                `
     }
 };
 
