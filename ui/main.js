@@ -6,5 +6,5 @@ element.innerHTML='New Version';
 var img = document.getElementById('madi');
 img.onclick = function()
 {
-    img.style.leftmargin='100px';  
+    img.style.marginleft='100px';  
 };
