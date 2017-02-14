@@ -12,54 +12,28 @@ var articles = {
         date : 'Feb 11, 2017',
         content : `
                     <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
+                        This is my first article.
                     </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>`
+                  `
     
     },
     'article-two' : {
         Title : 'Article Two | By MSK',
         Heading : 'Article Two',
-        date : 'Feb 11, 2017',
+        date : 'Feb 12, 2017',
         content : `
                     <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
+                        This is my second article.
                     </p>`
     
     },
     'article-three' : {
         Title : 'Article Three | By MSK',
         Heading : 'Article Three',
-        date : 'Feb 11, 2017',
+        date : 'Feb 13, 2017',
         content : `
                     <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
-                    </p>
-                    <p>
-                        This is my first article.This is my first article.This is my first article.
-                        This is my first article.This is my first article.This is my first article.
+                        This is my third article.
                     </p>`
     
     }
