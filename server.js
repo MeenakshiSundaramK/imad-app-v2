@@ -47,12 +47,13 @@ function createtemplate(data) {
     
     var htmltemplate = `
     <html>
-        <title>
-            ${title}
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/ui/style.css" rel="stylesheet" />
-        
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>        
         
         <body>
             <div class="container">
