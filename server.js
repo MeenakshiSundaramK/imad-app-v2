@@ -60,7 +60,7 @@ function createtemplate(data) {
                     <a href="/">Home</a>
                 </div>
                 <div>
-                    ${Headings}
+                    ${Heading}
                 </div>
                 <div>
                     ${date}
