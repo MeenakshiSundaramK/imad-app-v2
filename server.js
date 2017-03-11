@@ -5,6 +5,9 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+
+
 var articles = {  
     'article-one' : {
         title : 'Article One | By MSK',
@@ -105,6 +108,14 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+function hash(input, salt) {
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return hashed.tostring(hex);
+}
+app.get('/hash/:input',function(req,res) {
+    var hashedString = hash(req.params.input, 'random-string');
+    res.send(hashedString);
+});
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
