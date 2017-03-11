@@ -3,6 +3,8 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
+
+var crypto = require('crypto');
 app.use(morgan('combined'));
 
 
