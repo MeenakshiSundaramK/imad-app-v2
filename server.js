@@ -1,12 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
+var pool = require('pg').Pool;
 var app = express();
+var bodyParser = require('body-parser');
 
 var crypto = require('crypto');
 app.use(morgan('combined'));
-
+app.use(bodyParser.json());
 
 
 
@@ -117,7 +118,25 @@ function hash(input, salt) {
 app.get('/hash/:input',function(req,res) {
     var hashedString = hash(req.params.input, 'random-string');
     res.send(hashedString);
+    
 });
+
+app.post('/create-user', function(req, res) {
+   var username = req.body.username;
+   var password = req.body.password;
+   var salt = crypto.getRandomBytes(128).toString('hex');
+   var dbstring = hash(password, salt);
+   pool.query(' INSERT INTO "user" (username, password) VALUES ($1,$2)',[username,dbString],function(err,result) {
+       if (err) {
+           res.status(500).send(err.toString());
+       }
+       else {
+           res.send("User successfully created:", + username);
+       }
+       
+   });
+});
+
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
