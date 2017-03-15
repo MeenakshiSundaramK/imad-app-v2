@@ -1,15 +1,32 @@
-console.log('Loaded!');
+var submit = document.getElementById('submit_btn');
 
-//var element = document.getElementById('main-text');
-//element.innerHTML='New Version';
-
-var img = document.getElementById('madi');
-var marginLeft = 0;
-function moveright() {
-    marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft + 'px';
+submit.onclick = function () {
+    
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function () {
+        
+      if (request.readystate === XMLHttpRequest.DONE) {
+      
+          if (request.status === 200 ) {
+             alert('Logged in');
+          }  else if (request.status === 403 ) {
+             alert('Not logged in');
+          } else if (request.status === 500 ) {
+             alert('server issue');
+          }
+      }
+    };  
 }
-img.onclick = function() {
 
-    var interval = setInterval(moveright,100);
-};
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+
+console.log(username);
+console.log(password);
+
+request.open('POST','http://coco98.imad.hasura-app.in/login', true);
+request.setRequestHeader('Content-type', 'application/json');
+request.send(JSON.stringify({username : username, password : password}));
+
+
